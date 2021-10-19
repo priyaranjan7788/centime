@@ -69,7 +69,7 @@ def step_impl(context,freq,cpnyname):
     for i in range(1, int(freq)):
 
         context.data = readjsonfile(context.path+"/"+cpnyname+str(i))
-        if i >= 5:
+        if i > 5:
             assert context.data["Note"] == "Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency."
         else:
             assert context.data["Meta Data"]["1. Information"] == "Daily Prices (open, high, low, close) and Volumes"
